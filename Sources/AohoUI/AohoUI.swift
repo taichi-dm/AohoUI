@@ -13,7 +13,7 @@ public struct AohoUI {
 }
 
 private extension Color {
-    static let aoho_green: Color = Color("aoho_green")
+    static let aoho_green: Color = Color(hex: 0x8bcecb)
 }
 
 
@@ -27,8 +27,33 @@ public struct AHPrimaryButtonStyle: ButtonStyle {
     }
 }
 
-public struct AHSecondaryButtonStyle: ButtonStyle {
-    public func makeBody(configuration: Configuration) -> some View {
-        configuration.label
+
+// Hex Colors
+extension UIColor {
+    convenience init(hex: Int, alpha: CGFloat = 1) {
+        let components = (
+            R: CGFloat((hex >> 16) & 0xff) / 255,
+            G: CGFloat((hex >> 08) & 0xff) / 255,
+            B: CGFloat((hex >> 00) & 0xff) / 255
+        )
+        self.init(red: components.R, green: components.G, blue: components.B, alpha: alpha)
     }
 }
+
+extension Color {
+    init(hex: Int, alpha: Double = 1) {
+        let components = (
+            R: Double((hex >> 16) & 0xff) / 255,
+            G: Double((hex >> 08) & 0xff) / 255,
+            B: Double((hex >> 00) & 0xff) / 255
+        )
+        self.init(
+            .sRGB,
+            red: components.R,
+            green: components.G,
+            blue: components.B,
+            opacity: alpha
+        )
+    }
+}
+

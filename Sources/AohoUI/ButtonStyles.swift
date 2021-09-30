@@ -27,6 +27,6 @@ public struct AHSecondaryButtonStyle: ButtonStyle {
 
 struct AohoUI_Catalog: PreviewProvider {
     static var previews: some View {
-        AohoUI.aoho_green.frame(width: 230, height: 270)
+        AohoUI.Colors.aoho_green.frame(width: 230, height: 270)
     }
 }

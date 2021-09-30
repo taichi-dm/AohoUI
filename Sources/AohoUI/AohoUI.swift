@@ -19,8 +19,8 @@ private extension Color {
 
 
 @available(iOS 13.0.0, *)
-struct AHPrimaryButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
+public struct AHPrimaryButtonStyle: ButtonStyle {
+    public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(maxWidth: .infinity)
             .padding()
@@ -30,8 +30,8 @@ struct AHPrimaryButtonStyle: ButtonStyle {
 }
 
 @available(iOS 13.0.0, *)
-struct AHSecondaryButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
+public struct AHSecondaryButtonStyle: ButtonStyle {
+    public func makeBody(configuration: Configuration) -> some View {
         configuration.label
     }
 }

@@ -48,11 +48,11 @@ public struct AohoSymbol: View {
             ZStack {
                 ZStack(alignment: .bottomLeading) {
                     RoundedRectangle(cornerRadius: bottomLeftCornerRadius)
-                        .fill(AohoUI.aoho_green)
+                        .fill(AohoUI.Colors.aoho_green)
                         .frame(width: min / 2 + bottomLeftCornerRadius, height: min / 2 + bottomLeftCornerRadius)
                     
                     Circle()
-                        .fill(AohoUI.aoho_green)
+                        .fill(AohoUI.Colors.aoho_green)
                         .frame(width: min, height: min)
                     
                 }
@@ -68,7 +68,7 @@ public struct AohoSymbol: View {
                     
                     /// innner circle main_green
                     Circle()
-                        .fill(AohoUI.aoho_green)
+                        .fill(AohoUI.Colors.aoho_green)
                         .frame(width: min / 1.4, height: min / 1.4)
                     
                     

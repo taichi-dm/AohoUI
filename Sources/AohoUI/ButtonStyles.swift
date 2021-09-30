@@ -9,6 +9,16 @@ import SwiftUI
 
 // ButtonStyles
 
+public struct AHPrimaryButtonStyle: ButtonStyle {
+    public func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Capsule().fill(Color.white))
+            .padding(.vertical)
+    }
+}
+
 public struct AHSecondaryButtonStyle: ButtonStyle {
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label

@@ -18,7 +18,7 @@ extension Color {
 }
 
 extension UIColor {
-    static let aoho_green: UIColor = UIColor(named: "aoho_green", in: Bundle.module, compatibleWith: nil)!
+    static let aoho_green: UIColor = UIColor(hex: 0x8bcecb)
     
     // Primary to Quaternary labels.
     static let aoho_primary_label: UIColor = UIColor.label

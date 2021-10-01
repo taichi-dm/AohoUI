@@ -4,6 +4,8 @@ import SwiftUI
 
 // Single source of truth.
 public struct AohoUI {
+    
+    // Use this color set in Aoho.app
     public struct Colors {
         public static let shadowColor: Color = Color.secondary.opacity(0.05)
         public static let aoho_green: Color = Color.aoho_green

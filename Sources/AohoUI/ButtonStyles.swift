@@ -12,33 +12,46 @@ import SwiftUI
 public struct AHPrimaryButtonStyle: ButtonStyle {
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .foregroundColor(.black)
+            .foregroundColor(.aoho_primary_label)
             .frame(maxWidth: .infinity)
             .padding()
             .background(Capsule()
-                            .fill(Color.white)
-                            .shadow(color: AohoUI.Colors.aoho_quaternary_label,
+                            .fill(Color.aoho_primary_label)
+                            .colorInvert()
+                            .shadow(color: AohoUI.Colors.aoho_quaternary_label.opacity(0.3),
                                     radius: 20))
             .padding(.vertical)
     }
 }
 
+
 public struct AHSecondaryButtonStyle: ButtonStyle {
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
+            .foregroundColor(.aoho_secondary_label)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Capsule()
+                            .fill(Color.aoho_primary_label)
+                            .colorInvert()
+                            .shadow(color: AohoUI.Colors.aoho_quaternary_label.opacity(0.5),
+                                    radius: 20))
+            .padding(.vertical)
     }
 }
 
 struct AHButtonStyles_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) { scheme in
-            Group {
+            VStack(spacing: 30) {
                 Button("AHPrimaryButtonStyle") {}
                 .buttonStyle(AHPrimaryButtonStyle())
+                
                 Button("AHSecondaryButtonStyle") {}
                 .buttonStyle(AHSecondaryButtonStyle())
             }
             .preferredColorScheme(scheme)
         }
+        .previewLayout(.sizeThatFits)
     }
 }

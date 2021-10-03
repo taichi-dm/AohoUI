@@ -142,14 +142,14 @@ public struct AohoSymbol: View {
     }
     
     private func animate() {
-        withAnimation(.spring(response: 2.9, dampingFraction: 0.3, blendDuration: 0.1)) {
+        withAnimation(Animation.spring(response: 2.9, dampingFraction: 0.6, blendDuration: 0.1)) {
             iconRotationAngle.degrees -= 360
         }
-        withAnimation(.spring(response: 3.5, dampingFraction: 1, blendDuration: 0.1)) {
+        withAnimation(Animation.spring(response: 3.5, dampingFraction: 1, blendDuration: 0.1)) {
             long.degrees += 360
         }
         
-        withAnimation(.spring(response: 1.5, dampingFraction: 0.8, blendDuration: 0.1)) {
+        withAnimation(Animation.spring(response: 1.5, dampingFraction: 0.6, blendDuration: 0.1)) {
             short.degrees -= 360
         }
     }
@@ -172,6 +172,15 @@ public struct AohoSymbol: View {
 
 struct Aoho_Logo_Previews: PreviewProvider {
     static var previews: some View {
-        AohoSymbol().padding()
+        Group {
+            AohoSymbol(state: .clock)
+                .previewDisplayName("Clock")
+            AohoSymbol(state: .loading)
+                .previewDisplayName("Loading")
+            AohoSymbol(state: .tappable)
+                .previewDisplayName("Tappable")
+        }
+        .padding()
+        .previewLayout(.sizeThatFits)
     }
 }

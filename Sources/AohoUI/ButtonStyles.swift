@@ -10,6 +10,7 @@ import SwiftUI
 // ButtonStyles
 
 public struct AHPrimaryButtonStyle: ButtonStyle {
+    public init() {}
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(.aoho_primary_label)
@@ -26,6 +27,7 @@ public struct AHPrimaryButtonStyle: ButtonStyle {
 
 
 public struct AHSecondaryButtonStyle: ButtonStyle {
+    public init() {}
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(.aoho_secondary_label)

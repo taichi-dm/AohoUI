@@ -13,7 +13,7 @@ public struct AHPrimaryButtonStyle: ButtonStyle {
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(.aoho_primary_label)
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: 500)
             .padding()
             .background(Capsule()
                             .fill(Color.aoho_primary_label)
@@ -29,7 +29,7 @@ public struct AHSecondaryButtonStyle: ButtonStyle {
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(.aoho_secondary_label)
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: 500)
             .padding()
             .background(Capsule()
                             .fill(Color.aoho_primary_label)

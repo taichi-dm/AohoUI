@@ -55,3 +55,11 @@ extension Color {
         )
     }
 }
+
+struct ColorCatalog_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack {
+            
+        }
+    }
+}

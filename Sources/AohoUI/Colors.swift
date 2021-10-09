@@ -15,6 +15,10 @@ extension Color {
     static let aoho_secondary_label: Color = Color(UIColor.secondaryLabel)
     static let aoho_tertiary_label: Color = Color(UIColor.tertiaryLabel)
     static let aoho_quaternary_label: Color = Color(UIColor.quaternaryLabel)
+    
+    static let systemBackgroundColor = Color(UIColor.systemBackground)
+    static let backgroundColor = Color(UIColor.systemGray6)
+    
 }
 
 extension UIColor {
@@ -57,9 +61,34 @@ extension Color {
 }
 
 struct ColorCatalog_Previews: PreviewProvider {
+    struct ColorCatalog: View {
+        
+        
+        var body: some View {
+            NavigationView {
+                List {
+                    Section {
+                        Color.aoho_primary_label.overlay(Text("aoho_primary_label").colorInvert())
+                        Color.aoho_secondary_label.overlay(Text("aoho_secondary_label").colorInvert())
+                        Color.aoho_tertiary_label.overlay(Text("aoho_tertiary_label"))
+                        Color.aoho_quaternary_label.overlay(Text("aoho_quaternary_label"))
+                    }
+                    .listRowInsets(EdgeInsets())
+                    Section {
+                        Color.systemBackgroundColor.overlay(Text("systemBackgroundColor"))
+                        Color.backgroundColor.overlay(Text("backgroundColor"))
+                        
+                    }
+                    .listRowInsets(EdgeInsets())
+                }
+            }
+        }
+    }
     static var previews: some View {
-        VStack {
-            
+        Group {
+            ColorCatalog()
+            ColorCatalog()
+                .preferredColorScheme(.dark)
         }
     }
 }

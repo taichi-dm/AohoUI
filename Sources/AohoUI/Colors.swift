@@ -16,7 +16,7 @@ extension Color {
     static let aoho_tertiary_label: Color = Color(UIColor.tertiaryLabel)
     static let aoho_quaternary_label: Color = Color(UIColor.quaternaryLabel)
     
-    static let systemBackgroundColor = Color(UIColor.systemBackground)
+    static let systemBackground = Color(UIColor.systemBackground)
     static let backgroundColor = Color(UIColor.systemGray6)
     
 }

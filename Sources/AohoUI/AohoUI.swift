@@ -13,6 +13,8 @@ public struct AohoUI {
         public static let aoho_secondary_label: Color = Color.aoho_secondary_label
         public static let aoho_tertiary_label: Color = Color.aoho_tertiary_label
         public static let aoho_quaternary_label: Color = Color.aoho_quaternary_label
+        public static let aoho_systemBackgroundColor = Color(UIColor.systemBackground)
+        public static let aoho_backgroundColor = Color(UIColor.systemGray6)
     }
     
     public struct Token {

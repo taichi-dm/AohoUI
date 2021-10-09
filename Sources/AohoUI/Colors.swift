@@ -16,8 +16,8 @@ extension Color {
     static let aoho_tertiary_label: Color = Color(UIColor.tertiaryLabel)
     static let aoho_quaternary_label: Color = Color(UIColor.quaternaryLabel)
     
-    static let systemBackground = Color(UIColor.systemBackground)
-    static let backgroundColor = Color(UIColor.systemGray6)
+    static let aoho_systemBackground = Color(UIColor.systemBackground)
+    static let aoho_backgroundColor = Color(UIColor.systemGray6)
     
 }
 
@@ -75,8 +75,8 @@ struct ColorCatalog_Previews: PreviewProvider {
                     }
                     .listRowInsets(EdgeInsets())
                     Section {
-                        Color.systemBackgroundColor.overlay(Text("systemBackgroundColor"))
-                        Color.backgroundColor.overlay(Text("backgroundColor"))
+                        Color.aoho_systemBackground.overlay(Text("systemBackgroundColor"))
+                        Color.aoho_backgroundColor.overlay(Text("backgroundColor"))
                         
                     }
                     .listRowInsets(EdgeInsets())

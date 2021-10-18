@@ -12,8 +12,10 @@ final class AohoUITests: XCTestCase {
         
         XCTAssertEqual(AohoUI.Token.cornerRadius, 20.0)
         
+        // MARK: - Tokens.
         
-        // MARK: - Spacing
-        XCTAssertEqual(AohoUI.Token.spacing, 15.0)
+        XCTAssertEqual(AohoUI.Token.cornerRadius, 20.0)
+        XCTAssertEqual(AohoUI.Token.spacing, 20.0)
+        XCTAssertEqual(AohoUI.Token.padding, 16.0)
     }
 }

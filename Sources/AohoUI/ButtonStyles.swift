@@ -13,15 +13,16 @@ public struct AHPrimaryButtonStyle: ButtonStyle {
     public init() {}
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .foregroundColor(.aoho_primary_label)
+            .foregroundColor(.aoho_systemBackground)
             .frame(maxWidth: 500)
             .padding()
             .background(Capsule()
                             .fill(Color.aoho_primary_label)
-                            .colorInvert()
                             .shadow(color: AohoUI.Colors.aoho_quaternary_label.opacity(0.3),
                                     radius: 20))
             .padding(.vertical)
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
+            .animation(.easeOut, value: configuration.isPressed)
     }
 }
 
@@ -30,7 +31,7 @@ public struct AHSecondaryButtonStyle: ButtonStyle {
     public init() {}
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .foregroundColor(.aoho_secondary_label)
+            .foregroundColor(.aoho_primary_label)
             .frame(maxWidth: 500)
             .padding()
             .background(Capsule()
@@ -39,6 +40,8 @@ public struct AHSecondaryButtonStyle: ButtonStyle {
                             .shadow(color: AohoUI.Colors.aoho_quaternary_label.opacity(0.5),
                                     radius: 20))
             .padding(.vertical)
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
+            .animation(.easeOut, value: configuration.isPressed)
     }
 }
 

@@ -19,8 +19,8 @@ public struct AohoUI {
     
     public struct Token {
         public static let cornerRadius: CGFloat = 20.0
-        public static let spacing: CGFloat = 20
-        public static let padding: CGFloat = 16
+        public static let spacing: CGFloat = 20.0
+        public static let padding: CGFloat = 16.0
     }
 }
 

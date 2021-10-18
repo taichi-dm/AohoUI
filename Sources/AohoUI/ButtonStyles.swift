@@ -23,6 +23,13 @@ public struct AHPrimaryButtonStyle: ButtonStyle {
             .padding(.vertical)
             .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
             .animation(.easeOut, value: configuration.isPressed)
+            .onChange(of: configuration.isPressed) { newValue in
+                if newValue {
+                    Haptics.onButtonPushedIn()
+                } else {
+                    Haptics.onButtonReleased()
+                }
+            }
     }
 }
 

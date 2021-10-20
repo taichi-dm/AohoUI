@@ -25,9 +25,9 @@ public struct AHPrimaryButtonStyle: ButtonStyle {
             .animation(.easeOut, value: configuration.isPressed)
             .onChange(of: configuration.isPressed) { newValue in
                 if newValue {
-                    Haptics.onButtonPushedIn()
+                    AHHaptics.onButtonPushedIn()
                 } else {
-                    Haptics.onButtonReleased()
+                    AHHaptics.onButtonReleased()
                 }
             }
     }

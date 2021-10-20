@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct Haptics {
+public struct AHHaptics {
     
     static func onButtonPushedIn() {
         let generator = UIImpactFeedbackGenerator(style: .rigid)

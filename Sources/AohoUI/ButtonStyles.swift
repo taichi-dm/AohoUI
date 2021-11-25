@@ -52,6 +52,21 @@ public struct AHSecondaryButtonStyle: ButtonStyle {
     }
 }
 
+public struct AHTintButtonStyle: ButtonStyle {
+    public init() {}
+    public func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundColor(.white)
+            .frame(maxWidth: 500)
+            .padding()
+            .background(Capsule()
+                            .fill(Color.aoho_green))
+            .padding(.vertical)
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
+            .animation(.easeOut, value: configuration.isPressed)
+    }
+}
+
 struct AHButtonStyles_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) { scheme in
@@ -61,6 +76,9 @@ struct AHButtonStyles_Previews: PreviewProvider {
                 
                 Button("AHSecondaryButtonStyle") {}
                 .buttonStyle(AHSecondaryButtonStyle())
+                
+                Button("AHTintButtonStyle") {}
+                .buttonStyle(AHTintButtonStyle())
             }
             .preferredColorScheme(scheme)
         }

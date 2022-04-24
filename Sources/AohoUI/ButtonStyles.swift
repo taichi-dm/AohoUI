@@ -67,6 +67,17 @@ public struct AHTintButtonStyle: ButtonStyle {
     }
 }
 
+public struct AHShrinkButtonStyle: ButtonStyle {
+
+    public init() {}
+
+    public func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
+            .animation(.easeOut, value: configuration.isPressed)
+    }
+}
+
 struct AHButtonStyles_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) { scheme in
@@ -79,6 +90,9 @@ struct AHButtonStyles_Previews: PreviewProvider {
                 
                 Button("AHTintButtonStyle") {}
                 .buttonStyle(AHTintButtonStyle())
+
+                Button("AHShrinkButtonStyle") {}
+                .buttonStyle(AHShrinkButtonStyle())
             }
             .preferredColorScheme(scheme)
         }
